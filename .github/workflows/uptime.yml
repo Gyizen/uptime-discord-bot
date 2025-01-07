@@ -17,10 +17,10 @@
 name: Uptime CI
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/5 * * * *"  # Executa a cada 5 minutos
   repository_dispatch:
-    types: [uptime]
-  workflow_dispatch:
+    types: [uptime]  # Pode ser disparado manualmente
+  workflow_dispatch:  # Permite execução manual
 jobs:
   release:
     name: Check status
@@ -34,8 +34,9 @@ jobs:
       - name: Check endpoint status
         uses: upptime/uptime-monitor@v1.38.0
         with:
-          url: 'https://3422eb9e-255b-44ed-8b42-b9db2ab3cbf9-00-275zpn0x7c6cg.kirk.replit.dev/'  # Coloque a URL do seu bot aqui
-          name: 'Replit Bot' # Um nome para a verificação
+          url: 'https://3422eb9e-255b-44ed-8b42-b9db2ab3cbf9-00-275zpn0x7c6cg.kirk.replit.dev/'  # Substitua pela URL do seu bot
+          name: 'Replit Bot'  # Nome para a verificação
         env:
-          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}  # Passando o segredo como variável de ambiente
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
+
