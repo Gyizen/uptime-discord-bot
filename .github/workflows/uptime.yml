@@ -34,7 +34,7 @@ jobs:
       - name: Check endpoint status
         uses: upptime/uptime-monitor@v1.38.0
         with:
-          url: 'https://seu-bot.replit.app'  # Coloque a URL do seu bot aqui
+          url: 'https://3422eb9e-255b-44ed-8b42-b9db2ab3cbf9-00-275zpn0x7c6cg.kirk.replit.dev/'  # Coloque a URL do seu bot aqui
           name: 'Replit Bot' # Um nome para a verificação
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
